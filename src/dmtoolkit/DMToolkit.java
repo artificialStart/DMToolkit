@@ -170,12 +170,12 @@ public class DMToolkit
         Scanner kb = new Scanner(System.in);
         System.out.println("\nEnter the name of the Player Character you want to remove.");
         String name = kb.nextLine();
-        for (int i = 0; i < playerCharacters.size(); i++) {
-            final PlayerChar p = playerCharacters.get(i);
+        for (PlayerChar p : playerCharacters) {
             if (p.getName().equals(name)) {
-                System.out.println(name + " found at index " + i);
-                playerCharacters.remove(i);
+                System.out.println(name + " found at index " + playerCharacters.indexOf(p));
+                playerCharacters.remove(p);
                 System.out.println(name + " was removed from the Database.");
+                continue;
             }//end if
         }// end for
         return playerCharacters;

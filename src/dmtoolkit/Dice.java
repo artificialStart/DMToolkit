@@ -20,8 +20,8 @@ public class Dice {
 	public int rollDice() {
 		int result = 0;
 		
-		for (int i = 0; i < numDice; ++i) {
-            int currentRoll = diceRand.nextInt(numSides)+1;
+		for (int i = 0; i < numDice; i++) {
+            int currentRoll = diceRand.nextInt(numSides)++;
             result += currentRoll;
         }
         return result;
